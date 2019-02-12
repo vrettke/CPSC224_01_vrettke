@@ -26,6 +26,7 @@ public class Hangman {
         //showLines(numberOfLines);
         wordFromList();
         
+        
     }
     
     public static void wordFromList()
@@ -68,27 +69,32 @@ public class Hangman {
     
     public static void showLines(int lines)
     {
-        
+        String spaces = "";
         for (int i = 0; i < lines; i++)
         {
-            System.out.print("_ ");
+            spaces += "_ ";    
         }
+        
+        //guessLetter();
+        String letter;
+        String strikes = "* * * * * *";
+                
+        letter = JOptionPane.showInputDialog(null,"Guess a letter.\n" + spaces 
+                + "\n\nStrikes Remaining: " + strikes);
+        
         
     }
     
-    public static void strikes(int strikeCount)
+    
+    public static void strikes()
     {
+        int strikeCount = 0;
         System.out.println("Strikes Remaining: ");
         for (int i = 0; i < 6 - strikeCount; i++)
         {
             System.out.print("*");
         }
     }
-    
-    public static void guessLetter()
-    {
-        
-    }   
     
     public static boolean isFound(int numberOfLines)
     {
